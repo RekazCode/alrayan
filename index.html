@@ -408,6 +408,70 @@
         .gallery-item:hover img {
             transform: scale(1.05);
         }
+
+        /* خريطة Google Maps */
+        .map-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--white) 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border: 2px solid var(--gold-color);
+        }
+
+        .map-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .map-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            border: 4px solid var(--gold-color);
+            position: relative;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--gold-color), var(--primary-color), var(--gold-color));
+            border-radius: 17px;
+            z-index: -1;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .map-container:hover iframe {
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .map-section {
+                padding: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .map-container iframe {
+                height: 350px;
+            }
+            
+            .map-title {
+                font-size: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -541,8 +605,9 @@
                     <p>نسعد بخدمتكم وتلقي استفساراتكم على مدار الساعة.</p>
                     <br>
                     <div class="contact-item">
-                        <span>📍</span> العنوان: طرابلس، ليبيا  
+                        <span>📍</span>  العنوان: ليبيا- طرابلس - بئر الاسطي ميلاد
                     </div>
+                    
                     <div class="contact-item">
                         <span>📞</span> الهاتف:  0912126370 218 
                     </div>
@@ -551,6 +616,19 @@
                     </div>
                 </div>
                 
+                <!-- خريطة Google Maps -->
+                <div class="map-section">
+                    <h3 class="map-title">📍 موقعنا على الخريطة</h3>
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=32.862250,13.314861&hl=ar&z=16&amp;output=embed"
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="موقع شركة الريان الدولية الأولى - طرابلس، ليبيا">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
